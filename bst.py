@@ -11,6 +11,8 @@ class Node:
 		self.rightchild = None
 	
 
+# Function to insert data to the tree
+
 	def insert(self, data):
 		if self.value == data:
 			return False
@@ -27,7 +29,8 @@ class Node:
 				self.rightchild = Node(data)
 				return True
 
-	
+# Function to find if the data node exists in the tree
+
 	def find(self,data):
 		if self.value == data:
 			return True
@@ -128,15 +131,14 @@ class Tree:
 			self.root.postorder()
 
 
-# def main():
-# 	a = Tree()
-# 	print (a.insert(15))
-# 	#print A.find(15)
-# 	#print(a.getht())
-# 	print (a.insert(6))
-# 	print (a.insert(18))
-# 	print(a.getht()) 
+def main():
+	a = Tree()
+	a.insert(15)
+	print a.getht()
+	a.insert(18)
+	a.insert(16)
+	print a.getht()
 
 
-# if __name__ == '__main__':
-# 	main()
+if __name__ == '__main__':
+	main()
