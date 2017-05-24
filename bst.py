@@ -45,6 +45,7 @@ class Node:
 			else:
 				return False
 
+# Fucntion to get Height of the binary tree
 
 	def getht(self):
 		if self.rightchild and self.leftchild:
