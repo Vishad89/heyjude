@@ -1,6 +1,6 @@
 
 def merge(left, right):
-	"""Compare and Merges arrays."""
+	"""Compares and Merges arrays."""
 
 	left_index, right_index = 0, 0
 	result = []
