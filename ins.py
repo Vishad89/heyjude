@@ -16,4 +16,6 @@ def userarr():
     			arr1.append(int(raw_input("Enter next no :")))
 			print arr1
 
+
+arr1 = [8,4,1,2,5]
 insort(arr1)
