@@ -9,3 +9,5 @@ print(response.status_code)
 data = response.json()
 print (type(data))
 print (data)
+
+print data[u'response'][u'duration']

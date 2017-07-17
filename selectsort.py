@@ -9,4 +9,4 @@ def selectsort(arr):
 
 
 arr1 = [8,4,1,2,5]
-print selectsort(arr1)
+print 	selectsort(arr1)
