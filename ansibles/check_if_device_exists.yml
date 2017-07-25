@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: true
+  #vars:
+  #     device: disk0s2
+  
+  tasks:
+    
+  - name: Check if the device exists
+    stat: 
+      path: "/dev/disk0s2"
+    register: disk0s2_check
+ 
+  - name: If the device exists, take action
+    shell: echo "the device exists"
+    when: disk0s2_check.stat.exists 
