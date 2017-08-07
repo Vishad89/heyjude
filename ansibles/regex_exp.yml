@@ -1,0 +1,25 @@
+--- 
+
+- hosts: localhost
+  gather_facts: true
+
+  tasks:
+
+  - name: regex check
+    lineinfile: 
+      dest: /tmp/regex-text.txt 
+      #insertafter: '[BIOS::BootOrder]'
+      regexp: '(^(SATA)\s+(.+)\s+)[\d+]$'
+      line: '\1 hello'
+      backrefs: yes
+      state: present
+      #regexp: '(^IBA/s+/(.+))([\d+])$'
+      #line: '\1'
+      #backrefs: yes
+
+
+  # - name: regex check
+  #   shell: echo "the device exists"
+  
+  # - lineinfile: dest=/Users/c17625/Library/Application Support/Sublime Text 3/Packages/User/heyjude/ansibles/regex-text.txt line="IBA"
+  #   

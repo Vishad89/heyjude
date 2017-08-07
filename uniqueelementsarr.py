@@ -1,5 +1,5 @@
-#find unique numbers from two arrays
-# This is very close to missingelements.py solution, but with a slight change#
+# find unique numbers from two arrays
+# This is very close to missingelements.py solution, but with a slight change
 
 from  collections import defaultdict
 

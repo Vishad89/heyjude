@@ -1,3 +1,5 @@
+# Merge sort
+
 
 def merge(left, right):
 	"""Compares and Merges arrays."""

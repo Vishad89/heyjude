@@ -1,3 +1,5 @@
+# Append lines to a file
+
 import sys
 import os
 

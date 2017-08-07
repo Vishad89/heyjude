@@ -18,7 +18,7 @@ class node(object):
 
 # Insert a node to the linked list
 
-class LinkedList(object):
+class LinkedList(node):
 	"""docstring for LinkedList"""
 	def __init__(self):
 		self.head = None
@@ -58,7 +58,7 @@ class LinkedList(object):
 
 
 
-list = node(93)
+list = LinkedList()
 list.insert(15)
 list.insert(7)
 print list.search(15)

@@ -1,3 +1,5 @@
+# The below code will group two more identical files into a list
+
 import os,sys
 import hashlib
 

@@ -1,3 +1,5 @@
+# Remove duplicate elemets from a list
+
 def find_dups(arr):
 	uq = []
 	l = len(arr)

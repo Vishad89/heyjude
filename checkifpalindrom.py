@@ -1,3 +1,6 @@
+# check if the input string is a palindrom 
+
+
 def checkifpalindrom(str):
 	
 #remove spaces from string

@@ -1,3 +1,5 @@
+# Selection Sort
+
 def selectsort(arr):
 	for i in range(len(arr)):
 		min = i 

@@ -1,3 +1,6 @@
+# Find if number is a prime number
+# if not a prime number, print out all the factos
+
 def is_prime(num):
 	factors = []
 	for i in xrange(2, (num // 2)):
@@ -8,7 +11,7 @@ def is_prime(num):
 
 
 a = raw_input("input any number:")
-is_prime(a)
+print is_prime(a)
 
 # def prime(n):
 # 	myList = []
