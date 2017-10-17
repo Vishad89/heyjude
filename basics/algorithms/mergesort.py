@@ -1,4 +1,15 @@
-# Merge sort
+"""
+    Merge Sort
+    ----------
+    Uses divide and conquer to recursively divide and sort the list
+    
+    Time Complexity: O(n log n)
+    
+    Space Complexity: O(n) Auxiliary
+    
+"""
+
+
 
 
 def merge(left, right):

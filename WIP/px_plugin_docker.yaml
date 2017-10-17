@@ -1,0 +1,48 @@
+# portworx plugin install on docker
+
+---
+- hosts: localhost
+  gather_facts: true
+
+  tasks:
+   
+    #install Docker based on the OS family   
+
+  - name: install docker 
+   	apt: pkg = docker.io state = present
+   	when: ansible_os_family == "debian"
+
+  - yum: pkg = docker state = present
+   	when: ansible_os_family == "redhat"
+
+    # check docker version and make sure, it 1.10 or greater version
+
+  - name: Docker version
+    command: docker -v
+    register: docker_version
+
+  - name: Shared mounts
+    lineinfile: dest="/lib/systemd/system/docker.service" regex='^MountFlags' state = absent
+  - command: systemctl daemon-reload
+  - command: systemctl restart docker
+    when: ansible_os_family == "redhat" and {{docker_version.stdout}} >= 1.10
+
+  - command: mount --make-shared /
+   	when: ansible_os_family == "debian" and {{docker_version.stdout}} >= 1.10
+
+    # creates few 
+  - name: create directories for PX plugin
+    command: mkdir -p /etc/pwx /opt/pwx/bin /var/lib/osd /var/cores
+
+    # installs PX as a Docker plugin
+
+  - name: install PX plugin v2
+    shell: yes '' | docker plugin install portworx/px:latest --alias pxd opts="-k etcd://myetc.company.com:2379 -c MY_CLUSTER_ID -s /dev/sdc"
+
+  - name: check PX status
+    command: /opt/pwx/bin/pxctl status
+    register: px_status
+   
+  - debug:
+    var: px_status.stdout
+
