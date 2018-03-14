@@ -1,5 +1,16 @@
+"""
+    Merge Sort
+    ----------
+    Uses divide and conquer to recursively divide and sort the list
+    
+    Time Complexity: O(n log n)
+    
+    Space Complexity: O(n) Auxiliary
+    
+"""
 
-# Merge sort
+
+
 
 def merge(left, right):
 	"""Compares and Merges arrays."""
@@ -33,5 +44,4 @@ def merge_sort(array):
 
 
 a = [17,2,4,3, 444, 5546, 7, 6, 63, 2, 5,6 ,7 ,77,15,10]
-
 print merge_sort(a)

@@ -1,0 +1,19 @@
+eval set -- `getopts --long aaaaa:, bbbbb:, help -o a:b:h: -- "$@"`
+while [$# -gt 0]:
+do
+  case "$1" in
+    -a | aaaaa)
+       aaaaa = "$2"
+       shift 2;;
+    -b | bbbbb
+       bbbbb = "$2"
+       shift 2;;
+    -h | help)
+       usage;
+       exit 0;;
+    -*)
+       echo "Error: Invalid option: $1" >&2
+       usage;
+       exit 1;;  
+   esac
+done
