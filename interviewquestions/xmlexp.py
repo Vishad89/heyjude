@@ -43,7 +43,7 @@ def xml2csv(news, filename):
 
 		writer.writeheader()
 
-		writer.writerows(newsitems)
+		writer.writerows(news)
 
 
 
