@@ -42,7 +42,7 @@ def main():
 	# Load an XML file from a web URL
 	loadXML()
 
-if __name__ = "__main__"
+if __name__ == "__main__"
 	
 	main()
 
