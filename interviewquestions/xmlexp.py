@@ -41,7 +41,7 @@ def main():
 	loadXML()
 
 	# Parse the XML file 
-	parseXML(newsfeed.xml)
+	parseXML('newsfeed.xml')
 
 if __name__ == "__main__" :
 	
