@@ -1,6 +1,3 @@
-#!/usr/bin/python
-
-
 
 """Parse XML file""" 
 
@@ -15,3 +12,5 @@ def loadfile():
 
 	with open('rssfeed.xml', 'r') as f:
 		f.read(resp.content)
+
+loadfile()
