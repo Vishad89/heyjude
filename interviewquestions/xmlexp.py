@@ -25,11 +25,9 @@ def parseXML(xmlfile):
 	root = tree.getroot()
 
 	news = []
-
 	
 	for item in root.findall('./channel/item'):
 
-		# empty news dictionary
     	newsitems = {}
  
         # iterate child elements of item
