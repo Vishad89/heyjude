@@ -3,6 +3,7 @@
 
 import requests
 from xml.etree import ElementTree
+import csv
 
 
 def loadXML():
@@ -32,6 +33,19 @@ def parseXML(xmlfile):
 
 	return news
 
+def xml2csv(news, filename):
+
+	fields = ['Title','Description','Link','GUID','PubData','Media']
+
+	with open('newsfeed.csv', 'w') as csvfile:
+
+		writer = csv.DictWriter(csvfile, fieldnames = fields)
+
+		witer.writerheader()
+
+		writer.writerrows(newsitems)
+
+
 
 
 def main():
@@ -41,7 +55,10 @@ def main():
 	loadXML()
 
 	# Parse the XML file 
-	print parseXML('newsfeed.xml')
+	news = parseXML('newsfeed.xml')
+
+	# convert to csv
+	xml2csv(news, 'newsfeed.csv')
 
 if __name__ == "__main__" :
 	
