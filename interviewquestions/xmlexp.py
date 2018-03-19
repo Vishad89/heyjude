@@ -26,11 +26,24 @@ def parseXML(xmlfile):
 
 	news = []
 
-	# iterate the newsfeed and add items to the news list
+	
 	for item in root.findall('./channel/item'):
 
-		news.append(item)
-
+	# empty news dictionary
+        newsitems = {}
+ 
+        # iterate child elements of item
+        for child in item:
+ 
+            # special checking for namespace object content:media
+            if child.tag == '{http://search.yahoo.com/mrss/}content':
+                newsitems['media'] = child.attrib['url']
+            else:
+                newsitems[child.tag] = child.text.encode('utf8')
+ 
+        # append news dictionary to news items list
+        news.append(newsitems)
+	
 	return news
 
 def xml2csv(news, filename):
