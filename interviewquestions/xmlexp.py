@@ -41,7 +41,7 @@ def xml2csv(news, filename):
 
 		writer = csv.DictWriter(csvfile, fieldnames = fields)
 
-		witer.writerheader()
+		writer.writerheader()
 
 		writer.writerrows(newsitems)
 
