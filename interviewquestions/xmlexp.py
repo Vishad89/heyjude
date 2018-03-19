@@ -14,8 +14,6 @@ def loadXML():
 	with open('newsfeed.xml', 'wb') as f:
 		f.write(resp.content)
 
-	# Parse the XML file 
-	parseXML(newsfeed.xml)
 
 def parseXML(xmlfile):
 
@@ -41,6 +39,9 @@ def main():
 
 	# Load an XML file from a web URL
 	loadXML()
+
+	# Parse the XML file 
+	parseXML(newsfeed.xml)
 
 if __name__ == "__main__" :
 	
