@@ -18,7 +18,7 @@ def loadXML():
 def parseXML(xmlfile):
 
 	# Create element Tree object for the XML file
-	tree = ElementTree.Parse(xmlfile)
+	tree = ElementTree.parse(xmlfile)
 
 	# Find the root element for the tree
 	root = tree.getroot()
@@ -41,7 +41,7 @@ def main():
 	loadXML()
 
 	# Parse the XML file 
-	parseXML('newsfeed.xml')
+	print parseXML('newsfeed.xml')
 
 if __name__ == "__main__" :
 	
