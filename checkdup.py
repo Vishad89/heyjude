@@ -2,7 +2,7 @@
 
 import os,sys
 import hashlib
-#testline, need to be removed later
+#test line
 def findduplicates(dir):
     matches = []
     #outFiles = []
