@@ -44,7 +44,7 @@
     shell: yes '' | docker plugin install portworx/px:latest --alias pxd opts="-k etcd://myetc.company.com:2379 -c MY_CLUSTER_ID -s /dev/sdc"
 
   - name: check PX status
-  command: /opt/pwx/bin/pxctl status
+    command: /opt/pwx/bin/pxctl status
     register: px_status
   
   - debug:
