@@ -20,23 +20,23 @@
 
 # check docker version and make sure, it 1.10 or greater version
   - name: Docker version
-    command: docker -v
+    shell: docker -v
     register: docker_version
 
   - name: Shared mounts
     lineinfile: dest="/lib/systemd/system/docker.service" regex='^MountFlags' state = absent
 
-  - command: systemctl daemon-reload
+  - shell: systemctl daemon-reload
 
-  - command: systemctl restart docker
+  - shell: systemctl restart docker
     when: ansible_os_family == "redhat" and {{docker_version.stdout}} >= 1.10
 
-  - command: mount --make-shared /
+  - shell: mount --make-shared /
     when: ansible_os_family == "debian" and {{docker_version.stdout}} >= 1.10
 
   # creates few 
   - name: create directories for PX plugin
-    command: mkdir -p /etc/pwx /opt/pwx/bin /var/lib/osd /var/cores
+    shell: mkdir -p /etc/pwx /opt/pwx/bin /var/lib/osd /var/cores
 
   # installs PX as a Docker plugin
 
@@ -44,9 +44,8 @@
     shell: yes '' | docker plugin install portworx/px:latest --alias pxd opts="-k etcd://myetc.company.com:2379 -c MY_CLUSTER_ID -s /dev/sdc"
 
   - name: check PX status
-    command: /opt/pwx/bin/pxctl status
+    shell: /opt/pwx/bin/pxctl status
     register: px_status
   
   - debug:
     var: px_status.stdout
-
