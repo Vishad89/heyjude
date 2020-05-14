@@ -8,17 +8,17 @@ I try organizing these codes into different categories, so they can be easily fo
 
 A little `tree` to show how the current repo structure look like. 
 
-```--- Ansible
---- Bash
-   --- interview_questions
---- Python
-   --- basics
-      --- data_structures
-         --- algorithms
-   --- interview_questions
-      --- caesar_cipher
-      --- sliding_window
-      --- string_manipulation
-      --- two_pointers
-   --- wip
---- WIP
+``` - Ansible
+    - Bash
+        - interview_questions
+    - Python
+        - basics
+            - data_structures
+                - algorithms
+        - interview_questions
+            - caesar_cipher
+            - sliding_window
+            - string_manipulation
+            - two_pointers
+        - wip
+    - WIP
