@@ -4,34 +4,31 @@ import numpy as np
 import random
 import time
 
-def generaterandomnumbers():
-    #num_pot = np.arange(1,91)).reshape(9,10)
-    num_pot = np.zeros([9,10], dtype=int)
-    housie_pot = [k for k in range(1,91)]
-    while len(housie_pot) > 0:
-        x = str(housie_pot.pop(random.randrange(len(housie_pot))))
-        if len(x) == 1:
+def housie_numbers():
+    # two lists 
+    # This is where numbers will be populated
+    housie_board = np.zeros([9,10], dtype=int)
+
+    # This is where numbers will be drawn from 
+    numbers_pot = [k for k in range(1,91)]
+    
+    # run until we run out of numbers to draw out from number_pot
+    while len(numbers_pot) > 0:
+        x = numbers_pot.pop(random.randrange(len(numbers_pot)))
+        if x < 10:
             i = 0
             j = x
-        elif int(x)%10 == 0:
-            i = int(x)/10 - 1
-            j = 10 
+        elif x%10 == 0:
+            i = x/10 -1
+            j = 10
         else:
-            j = x[1]
-            i = x[0]
-        num_pot[int(i)][int(j)-1] = int(x)
-        print('\033[1;31m', x,'\033[1;m',"\n\n",num_pot,"\n\n")
+            i = x/10
+            j = x%10
+        housie_board[int(i)][int(j)-1] = x
+
+        
+        print('\033[0.5;31m', x,'\033[2;m',"\n\n",'\033[1;32m', housie_board,'\033[2;m',"\n\n")
         input("Press Enter for next number... \n")
         #time.sleep(15)
 
-# def random_numbers():
-#     i = random.randint(0,9)
-#     j = random.randint(0,9)
-#     while [i,j] not in x:
-#        i = random.randint(0,9)
-#        j = random.randint(0,9) 
-#        x.append([i,j])
-#     print(x)
-
-# random_numbers()
-generaterandomnumbers()
+housie_numbers()
