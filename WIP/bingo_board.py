@@ -25,10 +25,17 @@ def housie_numbers():
             i = x/10
             j = x%10
         housie_board[int(i)][int(j)-1] = x
-
+        yield x, housie_board
         
-        print('\033[0.5;31m', x,'\033[2;m',"\n\n",'\033[1;32m', housie_board,'\033[2;m',"\n\n")
-        input("Press Enter for next number... \n")
+        #print('\033[0.5;31m', x,'\033[2;m',"\n\n",'\033[1;32m', housie_board,'\033[2;m',"\n\n")
+        #yield input("Press Enter for next number... \n")
         #time.sleep(15)
 
-housie_numbers()
+
+        generator = housie_numbers()
+        num = next(generator)
+        print(num)
+        time.sleep(4)
+   
+main()
+#housie_numbers()
