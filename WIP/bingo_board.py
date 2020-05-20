@@ -8,7 +8,7 @@ def housie_numbers():
     # two lists 
     # This is where numbers will be populated
     housie_board = np.zeros([9,10], dtype=int)
-
+    #housie_board = np.empty([9,10], dtype=int)
     # This is where numbers will be drawn from 
     numbers_pot = [k for k in range(1,91)]
     
