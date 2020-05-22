@@ -1,6 +1,6 @@
-
-##`1451`. Rearrange Words in a Sentence
 """
+1451. Rearrange Words in a Sentence
+
 Medium
 
 66
@@ -47,3 +47,12 @@ Constraints:
 text begins with a capital letter and then contains lowercase letters and single space between words.
 1 <= text.length <= 10^5
 """
+class solution:
+    def rearrange_words(self,sentence):
+        sentence = sorted(sentence.split(),key=len)
+        return (' '.join(sentence)).capitalize()
+
+str = input("input a sentence here: ")
+r = solution()
+print(r.rearrange_words(str))
+#print(r.rearrange_words("keep calm and code on"))
