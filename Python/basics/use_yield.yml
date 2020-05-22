@@ -1,0 +1,22 @@
+def primeNumbers():
+
+#A function that will yield 2 different values at different places
+
+
+  print('step 1')
+  # Yield a value
+  yield 5
+  print('step 2')
+  # Yield a value
+  yield 7
+
+def main():
+  generator = primeNumbers()
+ 
+  # Get First element
+  num = next(generator)
+  print('First Element : ', num)
+  num = next(generator)
+  print('Second Element : ', num)
+
+main()
