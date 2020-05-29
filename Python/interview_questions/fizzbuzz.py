@@ -1,16 +1,15 @@
 #fizzbuzz
 
 def fizzbuzz(num, i, j):
-	print (num, i, j)
 	for n in range(1,num+1):
-		if n%(i*j) == 0:
-			print("fizzbuzz")
-		elif n%i == 0:
-			print("fizz")
-		elif n%j == 0:
-			print("buzz")
-		else: 
-			print(n)
+		result = ""
+		if n%i == 0:
+			result = "fizz"
+		if n%j == 0:
+			result += "buzz"
+		if not result:
+			result = n 
+		print(result)
 
 def main():
 	n = int(input("a number: "))
