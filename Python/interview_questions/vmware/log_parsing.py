@@ -31,6 +31,7 @@
 
 import re
 from collections import defaultdict
+
 def log_parser():
     output= defaultdict()
     regex = re.compile(r'^(\w+ \d+ \d+:\d+).*$')
@@ -42,4 +43,4 @@ def log_parser():
     for k,v in output:
         print (k,v)
     
-
+log_parser()
