@@ -5,7 +5,7 @@ class Slack:
 		self.items = []
 
 	def push(self,item):
-		self.items.insert(0,item)
+		self.items.append(item)
 
 	def pop(self):
 		self.items.pop()
