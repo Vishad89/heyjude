@@ -1,5 +1,8 @@
 # Stack implementation
+# LIFO (last in first out)
 
+#  5 ---- >  4 3 2 1  
+#  5 < ----  4 3 2 1
 class Stack:
 	def __init__(self):
 		self.items = []

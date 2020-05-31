@@ -1,4 +1,8 @@
-# Stack implementation
+# queue implementationi
+# FIFO (First in first out)
+
+#  5 ---- >  4 3 2 1  
+#  5 4 3 2  ---- > 1
 
 class queue:
 	def __init__(self):
