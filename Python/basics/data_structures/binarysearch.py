@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# Assumption: sorted array
+
+
 def binary_search(array, item):
     first = 0
     last = len(array) - 1
