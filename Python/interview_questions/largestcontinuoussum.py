@@ -2,7 +2,7 @@
 #Given an array of integers (positive and negative) find the largest continuous sum.
 
 
-def largestcontsun(arr):
+def largestcontsum(arr):
 	
 	if len(arr) == 0:
 		return
@@ -19,4 +19,4 @@ def largestcontsun(arr):
 	return maxSum
 
 
-print largestcontsun([-1, -5, -2, -6, -7, -h9, -5])
+print largestcontsum([-1, -5, -2, -6, -7, -9, -5])
