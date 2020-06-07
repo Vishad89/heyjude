@@ -1,7 +1,7 @@
 def encrypt(plaintext, key):
     cyphertext = ''
     if key > 26:
-        print "key has to be less than 27"
+        print("key has to be less than 27")
         exit()
     for character in plaintext:
         if character.isalpha():
