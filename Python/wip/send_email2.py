@@ -2,22 +2,23 @@
 
 from email.mime.text import MIMEText
 import smtplib
+import os
 
 def send_email(Subject,Result):
     SMTP_SERVER = "smtp.gmail.com"
     SMTP_PORT = 587
-    SMTP_USERNAME = user
-    SMTP_PASSWORD = passwd
+    SMTP_USERNAME = os.environ['SMTP_USER']
+    SMTP_PASSWORD = os.environ['SMTP_PASSWORD']
 
-    EMAIL_TO = [recipients]
-    EMAIL_FROM = user
+    EMAIL_TO = os.environ['EMAIL_TO']
+    EMAIL_FROM = os.environ['EMAIL_FROM']
     EMAIL_SUBJECT = Subject
-    EMAIL_SPACE = ", "
+    #EMAIL_SPACE = ", "
     EMAIL_BODY = Result
     
     msg = MIMEText(EMAIL_BODY)
     msg['Subject'] = EMAIL_SUBJECT
-    msg['To'] = EMAIL_SPACE.join(EMAIL_TO)
+    msg['To'] = EMAIL_TO
     msg['From'] = EMAIL_FROM
     mail = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
     mail.starttls()
