@@ -13,7 +13,6 @@ def send_email(Subject,Result):
     EMAIL_TO = os.environ['EMAIL_TO']
     EMAIL_FROM = os.environ['EMAIL_FROM']
     EMAIL_SUBJECT = Subject
-    #EMAIL_SPACE = ", "
     EMAIL_BODY = Result
     
     msg = MIMEText(EMAIL_BODY)
