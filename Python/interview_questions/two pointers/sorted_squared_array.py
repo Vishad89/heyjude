@@ -1,14 +1,23 @@
 #!/usr/bin/python3
 
 """
-write a function that return sorted array containing the squares of the intergers in a sorted array
+977. Squares of a Sorted Array
 
-example:
+Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order.
 
-array1 = [ -6, -4. 1, 2, 3, 7 ]
+Example 1:
 
-output: 
-[ 1, 4, 9, 16, 36, 49 ]
+Input: [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Example 2:
+
+Input: [-7,-3,2,3,11]
+Output: [4,9,9,49,121]
+ 
+Note:
+1 <= A.length <= 10000
+-10000 <= A[i] <= 10000
+A is sorted in non-decreasing order.
 """
 
 def squared_sorted_array(arr):
@@ -26,8 +35,5 @@ def squared_sorted_array(arr):
 
     return result
 
-def main():
-    arr1 = [ -17, -16, -5, 0, 4, 6, 20]
-    print(squared_sorted_array(arr1))
-
-main()
+arr1 = [ -17, -16, -5, 0, 4, 6, 20]
+print(squared_sorted_array(arr1))
