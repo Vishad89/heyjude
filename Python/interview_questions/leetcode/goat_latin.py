@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 824. Goat Latin
 
