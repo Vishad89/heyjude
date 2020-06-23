@@ -12,6 +12,7 @@ def send_email(Subject,Result):
     SMTP_PASSWORD = os.environ['SMTP_PASSWORD']
 
     EMAIL_TO = os.environ['EMAIL_TO']
+    EMAIL_CC = os.environ['EMAIL_CC']
     EMAIL_FROM = os.environ['EMAIL_FROM']
     EMAIL_SUBJECT = Subject
     EMAIL_BODY = Result
@@ -19,6 +20,7 @@ def send_email(Subject,Result):
     msg = MIMEText(EMAIL_BODY)
     msg['Subject'] = EMAIL_SUBJECT
     msg['To'] = EMAIL_TO
+    msg['Cc'] = EMAIL_CC
     msg['From'] = EMAIL_FROM
     mail = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
     mail.starttls()
