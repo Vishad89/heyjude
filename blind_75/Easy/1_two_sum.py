@@ -1,4 +1,5 @@
 """
+1. Two Sum
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -28,18 +29,39 @@ Constraints:
 -109 <= nums[i] <= 109
 -109 <= target <= 109
 Only one valid answer exists.
+ 
+
+Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 """
 
-def two_sum(arr, n):
-        i = 0
-        j = i + 1
-        while (i < j and i < len(arr) - 1):
-            if arr[i] == n - arr[j]:
-                return i, j
-            i += 1 
-            j += 1   
+# def two_sum(arr, n):
+#         i = 0
+#         j = i + 1
+#         while (i < j and i < len(arr) - 1):
+#             if arr[i] == n - arr[j]:
+#                 return i, j
+#             i += 1 
+#             j += 1   
+
+# arr = [1,2,3]
+# target = 5
+
+# print(two_sum(arr, target))
+
+
+# Use hashmap
+
+def two_sum(arr,n):
+    hmap = {}
+    for i, a in enumerate(arr):
+        diff = n - a
+        if diff in hmap:
+            return [hmap[diff], i]
+        hmap.append[a] = i
+    return
 
 arr = [1,2,3]
 target = 5
 
 print(two_sum(arr, target))
+        
