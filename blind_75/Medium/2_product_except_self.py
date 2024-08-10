@@ -27,17 +27,38 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 Follow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)
 
 """
-import itertools
-def productExceptSelf(arr):
-    result = []
-    for i in range(0, len(arr)):
-        prd = 1
-        for j in itertools.chain(range(i), range(i+1, len(arr))):
-            prd = prd * arr[j]
-        result.append(prd)
+# import itertools
+# def productExceptSelf(arr):
+#     result = []
+#     for i in range(0, len(arr)):
+#         prd = 1
+#         for j in itertools.chain(range(i), range(i+1, len(arr))):
+#             prd = prd * arr[j]
+#         result.append(prd)
+#     return result
+
+# nums = [1,2,3,4]
+# print(productExceptSelf(nums))
+
+
+# Efficient solution
+
+def productExceptSelf2(nums):
+    result = [1] * len(nums)
+    
+    preProd = 1
+    for i in range(len(nums)):
+        result[i] = preProd
+        preProd *= nums[i]
+    
+    postProd = 1
+    for i in range(len(nums) -1 , -1 , -1):
+        result[i] *= postProd
+        postProd *= nums[i]
+    
     return result
 
 nums = [1,2,3,4]
-print(productExceptSelf(nums))
-
-
+print(productExceptSelf2(nums))
+    
+    

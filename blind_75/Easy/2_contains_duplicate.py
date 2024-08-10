@@ -32,3 +32,15 @@ def containsDuplicate(arr):
 
 nums = [1,1,1,3,3,4,3,2,4,2]
 print(containsDuplicate(nums))
+
+
+def containsDuplicate2(nums):
+    hashset = set()
+    for n in nums:
+        if n in hashset:
+            return True
+        hashset.append(n)
+    return False
+
+nums = [1,1,3,4,3,2,4,2]
+print(containsDuplicate2(nums))
