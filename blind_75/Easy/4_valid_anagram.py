@@ -28,23 +28,36 @@ Follow up: What if the inputs contain Unicode characters? How would you adapt yo
 
 """
 
-class Solution:
-    def counters(strg):
-        counters = {}
-        for s in strg:
-           if s in counters:
-               counters[s] += 1
-           else:
-                counters[s] = 1
-        return counters
+# class Solution:
+#     def counters(strg):
+#         counters = {}
+#         for s in strg:
+#            if s in counters:
+#                counters[s] += 1
+#            else:
+#                 counters[s] = 1
+#         return counters
 
     
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         if len(s) is not len(t):
+#             return False
+#         s_counter = Solution.counters(s)
+#         t_counter = Solution.counters(t)
+#         return(s_counter == t_counter) 
+
+class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) is not len(t):
+        if len(s) != len(t):
             return False
-        s_counter = Solution.counters(s)
-        t_counter = Solution.counters(t)
-        return(s_counter == t_counter) 
+        
+        countS, countT = {}, {}
+        for i in range(len(s)):
+            countS[s[i]] = 1 + countS.get(s[i], 0)
+            countT[t[i]] = 1 + countT.get(t[i], 0)
+        return countS == countT
+            
+        
     
 s1 = "anagram"
 t1 = "nagaram"
