@@ -36,14 +36,12 @@ S contains only uppercase, lowercase and spaces. Exactly one space between each 
 
 class Solution:
     def goat_latin(self, sentence: str):
-        i = 1
         result = []
         vowels = "aeiou"
-        for word in sentence.split():
+        for i, word in enumerate(sentence.split()):
             if word[0] not in vowels:
                 word = word[1:] + word[0]
-            word = word + "ma" + i*"a"
-            i += 1
+            word = word + "ma" + (i+1)*"a"
             result.append(word)
         return ' '.join(result)
 s = Solution()

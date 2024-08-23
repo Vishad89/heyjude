@@ -27,18 +27,20 @@ s consists of English letters, digits, symbols and spaces.
 def lengthOfLongestSubstring(s:str) -> int:
     l = 0
     res = 0
-    d = set()
+    charSet = set()
     
     for r in range(len(s)):
-        while s[r] in d:
-            d.remove(s[l])
+        while s[r] in charSet:
+            charSet.remove(s[l])
             l +=1
-        d.add(s[r])
+        charSet.add(s[r])
         res = max(res, (r-l+1))
     return res
         
             
-
+s = "bbbbb"
+print(lengthOfLongestSubstring(s))
+# print(lengthOfLongestSubstring1(s))
 
 
 # Solution 2
@@ -58,6 +60,3 @@ def lengthOfLongestSubstring(s:str) -> int:
 #         s.pop()
 #     return
 
-s = "bbbbb"
-print(lengthOfLongestSubstring(s))
-# print(lengthOfLongestSubstring1(s))

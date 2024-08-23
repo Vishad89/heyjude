@@ -1,7 +1,7 @@
-import click 
-import enchant 
+import click  # type: ignore
+import enchant  # type: ignore
 
-from tqdm import tqdm
+import tqdm # type: ignore
 from caesar_encryption import encrypt
 
 @click.command()

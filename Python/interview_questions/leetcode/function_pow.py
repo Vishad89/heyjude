@@ -28,7 +28,7 @@ class Solution:
             return 1 / (x *self.powr(x,-n))
         elif n > 0:
             return (x * self.powr(x, n-1))
-        return (powr(x*x,n/2))
+        return (self.powr(x*x,n/2))
 
 num = float(input("input a number between [-100 , 100] : " ))
 power = int(input("input a power between [-231 , 230] : "))

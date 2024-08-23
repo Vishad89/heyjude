@@ -27,20 +27,28 @@
 # Jan 20 05:20,1
 # Jan 20 05:22,6
 # ---------- end sample output ------------ 
-""""
+"""
 
 import re
 from collections import defaultdict
+import csv
 
 def log_parser():
-    output= defaultdict()
+    #output = {}
+    output= defaultdict(int)
     regex = re.compile(r'^(\w+ \d+ \d+:\d+).*$')
-    with_open("/var/log/messages", "r") as file:
+    with open("messages", "r") as file:
         for line in file:
             match = regex.match(line)
             if match.group(1):
-                output[match.group(1)] +=1
-    for k,v in output:
-        print (k,v)
+                    # output[match.group(1)] = 1 + output.get(match.group(1),0)
+                    output[match.group(1)] +=1
+    
+    with open("/tmp/output.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+        for row in  output.items():
+            writer.writerow(row)
+    file.close
+
     
 log_parser()
