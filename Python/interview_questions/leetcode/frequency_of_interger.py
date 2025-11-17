@@ -42,7 +42,7 @@ def search_freq_num(arr,num):
             l = m
     right = r
 
-    return  (right -left +1)
+    return  (l, r)
 
 a = [1,2,3,3,3,4,4,4,5,5,6]
 print(search_freq_num(a,6))

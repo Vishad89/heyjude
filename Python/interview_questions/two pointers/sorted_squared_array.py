@@ -23,17 +23,17 @@ A is sorted in non-decreasing order.
 def squared_sorted_array(arr):
     left = 0 
     right = len(arr) - 1
-    result = [ 0 for x in arr]
+    result = []
 
-    for i in range(len(arr)-1, 0, -1):
-        if abs(arr[left]) > abs(arr[right]) :
-            result[i] = arr[left] * arr[left]
+    while left <= right:
+        if abs(arr[left]) > abs(arr[right]):
+            result.append(arr[left] * arr[left])
             left += 1
         else:
-            result[i] = arr[right] * arr[right]
+            result.append(arr[right] * arr[right])
             right -= 1
 
-    return result
+    return result[::-1]
 
 arr1 = [ -17, -16, -5, 0, 4, 6, 20]
 print(squared_sorted_array(arr1))
